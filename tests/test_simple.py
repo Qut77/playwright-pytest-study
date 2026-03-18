@@ -1,14 +1,22 @@
 import pytest
+import allure
 
+@allure.epic('Кнопки')
+@allure.feature('Кнопка simple')
 @pytest.mark.simple
 @pytest.mark.ui
-def test_simple_exists(simple_page):
-    simple_page.open()
-    simple_page.chech_button_exists()
+class TestSimple:
+    @allure.story('Проверка наличия кнопки')
+    @allure.title('Проверка наличия кнопки')
+    @allure.severity(allure.severity_level.BLOCKER)
+    def test_simple_exists(self, simple_page):
+        simple_page.open()
+        simple_page.check_button_exists()
 
-@pytest.mark.simple
-@pytest.mark.ui
-def test_simple_click(simple_page):
-    simple_page.open()
-    simple_page.click_button()
-    simple_page.check_result_click('Submitted')
+    @allure.story('Клик по кнопке и проверка подтверждения')
+    @allure.title('Валидация текста')
+    @allure.severity(allure.severity_level.NORMAL)
+    def test_simple_click(self, simple_page):
+        simple_page.open()
+        simple_page.click_button()
+        simple_page.check_result_click('Submitted')
