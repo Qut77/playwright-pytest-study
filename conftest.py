@@ -1,8 +1,11 @@
 import pytest
 import allure
 from playwright.sync_api import Page
-from pages.like_button_page import LikeButtonPage
-from pages.simple_page import SimplePage
+from pages.button_page import ButtonPage
+from pages.locators import *
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 @pytest.fixture()
 def page(context):
@@ -11,12 +14,28 @@ def page(context):
     yield page
 
 @pytest.fixture()
-def like_button_page(page: Page) -> LikeButtonPage:
-    return LikeButtonPage(page)
+def like_button_page(page: Page) -> ButtonPage:
+    return ButtonPage(
+        page=page,
+        url=os.getenv('LIKE_BUTTON_URL'),
+        locators=LikeButtonLocators,
+        )
 
 @pytest.fixture()
-def simple_page(page: Page)-> SimplePage:
-    return SimplePage(page)
+def simple_page(page: Page) -> ButtonPage:
+    return ButtonPage(
+        page=page,
+        url=os.getenv('SIMPLE_URL'),
+        locators=SimplePageLocators,
+        )
+
+@pytest.fixture()
+def disabled_page(page: Page) -> ButtonPage:
+    return ButtonPage(
+        page=page,
+        url=os.getenv('DISABLED_URL'),
+        locators=DisabledPageLocators
+    )
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):

@@ -3,10 +3,10 @@ import allure
 
 class BasePage:
 
-    url: str | None = None
-
-    def __init__(self, page: Page) -> None:
+    def __init__(self, page: Page, url:str = None, locators=None) -> None:
         self.page = page
+        self.url = url
+        self.locators = locators
 
     @allure.step("Открыть страницу")
     def open(self) -> None:

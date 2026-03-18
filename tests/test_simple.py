@@ -1,7 +1,7 @@
 import pytest
 import allure
 
-@allure.epic('Кнопки')
+@allure.epic('Сайт с тестовым функционалом')
 @allure.feature('Кнопка simple')
 @pytest.mark.simple
 @pytest.mark.ui

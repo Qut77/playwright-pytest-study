@@ -8,3 +8,10 @@ class LikeButtonLocators:
 class SimplePageLocators:
     BUTTON = '#submit-id-submit'
     RESULT = '#result-text'
+
+class DisabledPageLocators:
+    BUTTON = '#submit-id-submit'
+    RESULT = '#result-text'
+    SELECT = '#id_select_state'
+    DISABLED = 'disabled'
+    ENABLED = 'enabled'
