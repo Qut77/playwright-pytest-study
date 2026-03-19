@@ -3,7 +3,7 @@ import allure
 
 @allure.epic('Сайт с тестовым функционалом')
 @allure.feature('Кнопка like button')
-@pytest.mark.simple
+@pytest.mark.buttons
 @pytest.mark.ui
 class TestLikeButton:
     @allure.story('Проверка наличия кнопки')

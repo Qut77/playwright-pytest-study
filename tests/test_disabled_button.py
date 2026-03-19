@@ -3,7 +3,7 @@ import allure
 
 @allure.epic('Сайт с тестовым функционалом')
 @allure.feature('Кнопка disabled')
-@pytest.mark.simple
+@pytest.mark.buttons
 @pytest.mark.ui
 class TestDisabledButton:
     

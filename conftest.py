@@ -2,6 +2,7 @@ import pytest
 import allure
 from playwright.sync_api import Page
 from pages.button_page import ButtonPage
+from pages.input_page import InputPage
 from pages.locators import *
 from dotenv import load_dotenv
 import os
@@ -35,6 +36,14 @@ def disabled_page(page: Page) -> ButtonPage:
         page=page,
         url=os.getenv('DISABLED_URL'),
         locators=DisabledPageLocators
+    )
+
+@pytest.fixture()
+def smp_input_page(page: Page) -> InputPage:
+    return InputPage(
+        page=page,
+        url=os.getenv('SMP_INPUT_URL'),
+        locators=SMPInputLocators
     )
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
