@@ -1,6 +1,3 @@
-class GeneralLocators:
-    pass
-
 class LikeButtonLocators:
     BUTTON = '.a-button'
     RESULT = '#result-text'
