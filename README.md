@@ -1,5 +1,7 @@
 # Playwright Automation Project (UI Testing)
 
+[![Tests](https://github.com/Qut77/playwright-pytest-study/actions/workflows/tests.yml/badge.svg)](https://github.com/Qut77/playwright-pytest-study/actions)
+
 Учебный проект по автоматизации тестирования пользовательского интерфейса (UI) с использованием современного стека на Python. Проект построен с соблюдением паттерна **Page Object Model (POM)** и принципов чистой архитектуры.
 
 ## 🌐 Сайт тестирования
